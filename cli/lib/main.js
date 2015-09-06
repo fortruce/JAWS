@@ -252,27 +252,5 @@ JAWS.prototype._zip = function(program, codeDirectory, callback) {
     return callback(null, data);
 };
 
-
-
-/**
- * JAWS: Start "site" Server
- */
-
-JAWS.prototype.server = function(program) {
-
-    // Check if in server root folder
-    if (!fs.existsSync(process.cwd() + '/server.js')) return console.log('****** JAWS:  Error - You must be in the "site" directory of your JAWS application to run this command and start the server.');
-
-    var child = exec('node server', function(error, stdout, stderr) {
-        if (error !== null) console.log('exec error: ' + error);
-    });
-
-    child.stdout.pipe(process.stdout);
-    child.stderr.pipe(process.stderr);
-};
-
-
-
-
 // Export
 module.exports = new JAWS();

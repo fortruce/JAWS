@@ -33,19 +33,4 @@ program
     JAWS.run( prg );
   });
 
-
-/**
- * Server
- * - Starts the webserver for the application
- */
-
-program
-  .version( JAWS.version )
-  .command( 'server' )
-  .description( 'Start your server' )
-  .action( function( prg ) {
-    JAWS.server( prg );
-  });
-
-
 program.parse( process.argv );
